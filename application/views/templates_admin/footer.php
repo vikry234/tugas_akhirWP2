@@ -1,7 +1,7 @@
-<footer class="sticky-footer bg-white">
+<footer class="sticky-footer bg-white fixed-bottom">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; PT Pencari Cinta Sejati 2023</span>
+                        <span>Copyright &copy; PT Pencari Maju Jaya 2023</span>
                     </div>
                 </div>
             </footer>
