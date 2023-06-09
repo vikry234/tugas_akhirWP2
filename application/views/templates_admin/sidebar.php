@@ -7,10 +7,11 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                
+            <a href="<?php echo base_url('admin/dashboard'); ?>" class="sidebar-brand d-flex align-items-center justify-content-center">
+                <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo" width="75" height="35">
                 <div class="sidebar-brand-text mx-3">APP PENGGAJIAN</div>
             </a>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
