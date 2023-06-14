@@ -3,6 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<a class="sidebar-brand d-flex align-items-center justify-content-center">
+            <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo" width="55" height="45">
+            <div class="sidebar-brand-text mx-3"></div>
+         </a>
 	<title><? php echo $title ?></title>
 	<style type="text/css">
 		body{
@@ -16,6 +20,7 @@
 	<center>
 		<h1>PT. MAJU JAYA</h1>
 		<h2>Daftar Gaji Pegawai</h2>
+		<hr style="width: 50%; border-width: 3px; color: black;">
 	</center>
 
 	<?php 

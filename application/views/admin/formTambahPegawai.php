@@ -22,6 +22,18 @@
             </div>
 
             <div class="form-group">
+                <label>User Name</label>
+                <input type="text" name="username" class="form-control">
+                <?php echo form_error('username','<div class="text-small text- danger"></div>') ?>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="text" name="password" class="form-control">
+                <?php echo form_error('password','<div class="text-small text- danger"></div>') ?>
+            </div>
+
+            <div class="form-group">
                 <label>Jenis Kelamin</label>
                 <select name="jenis_kelamin" class="form-control">
                     <option value="">--Pilih Jenis Kelamin--</option>
@@ -32,10 +44,15 @@
             </div>
 
             <div class="form-group">
-                <label>Jabatan</label>
-                <input type="text" name="jabatan" class="form-control">
-                <?php echo form_error('jabatan','<div class="text-small text- danger"></div>') ?>
-            </div>
+          <label for="">Jabatan</label>
+          <select name="jabatan" id="" class="form-control">
+            <option value="">--Pilih Jabatan--</option>
+            <?php foreach($jabatan as $j): ?>
+              <option value="<?= $j->nama_jabatan; ?>"><?= $j->nama_jabatan; ?></option>
+              <?php endforeach; ?>
+            </select>
+            <?= form_error('jabatan', '<div class="text-small text-danger">', '</div>') ?>
+          </div>
 
             <div class="form-group">
                 <label>Tanggal Masuk</label>
@@ -56,6 +73,15 @@
             <div class="form-group">
                 <label>Photo</label>
                 <input type="file" name="photo" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Hak Akses</label>
+                <select name="hak_akses" class="form-control">
+                    <option value="">--Pilih Hak Akses--</option>
+                    <option value="1">Admin</option>
+                    <option value="2">Pegawai</option>
+                </select>
             </div>
 
 

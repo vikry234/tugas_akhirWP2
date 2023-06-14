@@ -24,6 +24,18 @@
             </div>
 
             <div class="form-group">
+                <label>User Name</label>
+                <input type="text" name="username" class="form-control value="<?php echo $p->username ?>>
+                <?php echo form_error('username','<div class="text-small text- danger"></div>') ?>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="text" name="password" class="form-control" value="<?php echo $p->password ?>">
+                <?php echo form_error('password','<div class="text-small text- danger"></div>') ?>
+            </div>
+
+            <div class="form-group">
                 <label>Jenis Kelamin</label>
                 <select name="jenis_kelamin" class="form-control">
                     <option value="<?php echo $p->jenis_kelamin ?>"><?php echo $p->jenis_kelamin ?></option>
@@ -64,6 +76,21 @@
             <div class="form-group">
                 <label>Photo</label>
                 <input type="file" name="photo" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Hak Akses</label>
+                <select name="hak_akses" class="form-control">
+                    <option value="<?php echo $p->hak_akses ?>">
+                        <?php if($p->hak_akses=='1') {
+                            echo "Admin";
+                        }else{
+                            echo "Pegawai";
+                        } ?>
+                    </option>
+                    <option value="1">Admin</option>
+                    <option value="2">Pegawai</option>
+                </select>
             </div>
 
 

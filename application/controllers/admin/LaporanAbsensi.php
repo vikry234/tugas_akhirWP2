@@ -1,7 +1,6 @@
 <?php 
 
-class LaporanGaji extends CI_Controller
-{
+class LaporanAbsensi extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
@@ -15,19 +14,19 @@ class LaporanGaji extends CI_Controller
 				redirect('welcome');
 		}
 	}
-	
+
 	public function index()
 	{
-		$data['title'] = "Laporan Gaji Pegawai";
+		$data['title'] = "Laporan Absensi";
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
-		$this->load->view('admin/filterLaporanGaji');
+		$this->load->view('admin/filterLaporanAbsensi');
 		$this->load->view('templates_admin/footer');
 	}
 
-	public function cetakLaporanGaji()
+	public function cetakLaporanAbsensi()
 	{
-		$data['title'] = "Cetak Laporan Gaji Pegawai";
+		$data['title'] = "Cetak Laporan Absensi";
 		if((isset($_GET['bulan']) && $_GET['bulan'] != '') && (isset($_GET['tahun']) && $_GET['tahun'] != '')){
 		    $bulan = $_GET['bulan'];
 		    $tahun = $_GET['tahun'];
@@ -38,15 +37,12 @@ class LaporanGaji extends CI_Controller
 		    $tahun = date('Y');
 		    $bulantahun = $bulan.$tahun;
   		}
-  		$data['potongan'] = $this->penggajianModel->get_data('potongan_gaji')->result();
-		$data['cetakGaji'] = $this->db->query("SELECT data_pegawai.nik, data_pegawai.nama_pegawai, data_pegawai.jenis_kelamin, data_jabatan.nama_jabatan, data_jabatan.gaji_pokok, data_jabatan.tj_transport, data_jabatan.uang_makan, data_kehadiran.alpha
-			FROM data_pegawai
-			INNER JOIN data_kehadiran ON data_kehadiran.nik = data_pegawai.nik
-			INNER JOIN data_jabatan ON data_jabatan.nama_jabatan = data_pegawai.jabatan
-			WHERE data_kehadiran.bulan = '$bulantahun'
-			ORDER BY data_pegawai.nama_pegawai ASC")->result();
+		$bulantahun = $bulan.$tahun;
+		$data['lap_kehadiran'] = $this->db->query("SELECT * FROM data_kehadiran
+			WHERE bulan = '$bulantahun'
+			ORDER BY nama_pegawai ASC")->result();
 		$this->load->view('templates_admin/header', $data);
-		$this->load->view('admin/CetakDataGaji', $data);
+		$this->load->view('admin/cetakLaporanAbsensi');
 	}
 }
 

@@ -88,7 +88,7 @@
       <td><?= $a->nik; ?></td>
       <td><?= $a->nama_pegawai; ?></td>
       <td><?= $a->jenis_kelamin; ?></td>
-      <td><?= $a->jabatan; ?></td>
+      <td><?= $a->nama_jabatan; ?></td>
       <td><?= $a->jumlah_hadir; ?></td>
       <td><?= $a->sakit; ?></td>
       <td><?= $a->alpha; ?></td>

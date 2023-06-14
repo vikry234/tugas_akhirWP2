@@ -2,6 +2,20 @@
 
 class dataPegawai extends CI_Controller
 {
+
+	public function __construct(){
+		parent::__construct();
+
+		if($this->session->userdata('hak_akses') !='1') {
+			$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				  <strong>Anda belum login!</strong>
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+				  </button>
+				</div>');
+				redirect('welcome');
+		}
+	}
+
 	public function index()
 	{
 		$data['title'] = "Data Pegawai";
@@ -35,6 +49,9 @@ class dataPegawai extends CI_Controller
 			$tanggal_masuk 				= $this->input->post('tanggal_masuk');
 			$jabatan					= $this->input->post('jabatan');
 			$status						= $this->input->post('status');
+			$hak_akses					= $this->input->post('hak_akses');
+			$username					= $this->input->post('username');
+			$password					= md5($this->input->post('password'));
 			$photo		 				= $_FILES['photo']['name'];
 			if($photo=''){}else{
 				$config ['upload_path']		= './assets/photo';
@@ -54,6 +71,9 @@ class dataPegawai extends CI_Controller
 				'jabatan'				=> $jabatan,
 				'tanggal_masuk'			=> $tanggal_masuk,
 				'status'				=> $status,
+				'hak_akses'				=> $hak_akses,
+				'username'				=> $username,
+				'password'				=> $password,
 				'photo'					=> $photo,
 			);
 
@@ -94,7 +114,10 @@ class dataPegawai extends CI_Controller
 				$tanggal_masuk		= $this->input->post('tanggal_masuk');
 				$jabatan			= $this->input->post('jabatan');
 				$status				= $this->input->post('status');
-				$photo				= $this->input->post('photo');
+				$hak_akses			= $this->input->post('hak_akses');
+				$username			= $this->input->post('username');
+				$password			= md5($this->input->post('password'));
+				$photo         		= $_FILES['photo']['name'];
 				if($photo){
 					$config ['upload_path']		= './assets/photo';
 					$config ['allowed_types']	= 'jpg|jpeg|png|tiff';
@@ -114,6 +137,9 @@ class dataPegawai extends CI_Controller
 				'jabatan'				=> $jabatan,
 				'tanggal_masuk'			=> $tanggal_masuk,
 				'status'				=> $status,
+				'hak_akses'				=> $hak_akses,
+				'username'				=> $username,
+				'password'				=> $password,
 			);
 
 				$where = array(
