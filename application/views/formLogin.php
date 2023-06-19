@@ -11,7 +11,15 @@
     <meta name="author" content="">
 
     <title>SB Admin 2 - Login</title>
-
+    <!-- Letakkan script JavaScript berikut sebelum penutup </body> tag -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+            $(document).ready(function() {
+              $(".close").click(function() {
+                $(this).closest(".alert").fadeOut();
+              });
+            });
+    </script>
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link

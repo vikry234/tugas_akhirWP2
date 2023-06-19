@@ -10,7 +10,7 @@
 
   <?= $this->session->flashdata('pesan'); ?>
 
-  <table class="table table-bordered table-stiped mt-2">
+  <table class="table table-bordered table-striped mt-2">
     <tr>
       <th class="text-center">No</th>
       <th class="text-center">Nama Jabatan</th>
