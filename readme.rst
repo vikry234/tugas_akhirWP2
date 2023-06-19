@@ -1,4 +1,10 @@
 ###################
+SISTEM PENGGAJIAN
+###################
+
+Ini adalah repository dari tugas WPII dari kelompok 1
+
+###################
 What is CodeIgniter
 ###################
 
