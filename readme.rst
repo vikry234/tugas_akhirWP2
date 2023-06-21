@@ -1,3 +1,17 @@
+# Maju Jaya
+
+## Halo, Kita dari Kelompok 1👋
+
+## Nama Proyek
+Sistem Penggajian
+
+
+## Anggota Tim Proyek:
+1. – Vikry Maulana Rasyid
+2. – Hendrawan Lotanto
+3. - Muhammad Haidar
+
+
 ###################
 What is CodeIgniter
 ###################
