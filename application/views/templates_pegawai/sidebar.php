@@ -7,7 +7,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a href="<?php echo base_url('admin/dashboard'); ?>" class="sidebar-brand d-flex align-items-center justify-content-center">
+            <a href="<?php echo base_url('pegawai/dashboard'); ?>" class="sidebar-brand d-flex align-items-center justify-content-center">
                 <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo" width="48" height="38">
                 <div class="sidebar-brand-text mx-3"></div>
             </a>
@@ -32,7 +32,7 @@
             
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('gantiPassword') ?>">
+                <a class="nav-link" href="<?php echo base_url('pegawai/gantiPassword') ?>">
                     <i class="fas fa-fw fa-lock"></i>
                     <span>Ganti Passsword</span></a>
             </li>
